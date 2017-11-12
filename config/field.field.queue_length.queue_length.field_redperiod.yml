@@ -1,0 +1,24 @@
+uuid: 311ba697-4011-4b3a-94b1-2bf53f92f1d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.queue_length.field_redperiod
+  module:
+    - trafficlight_api
+id: queue_length.queue_length.field_redperiod
+field_name: field_redperiod
+entity_type: queue_length
+bundle: queue_length
+label: redPeriod
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

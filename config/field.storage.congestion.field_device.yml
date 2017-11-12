@@ -1,0 +1,19 @@
+uuid: b32707b8-726b-4c9d-b3af-81af43616997
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: congestion.field_device
+field_name: field_device
+entity_type: congestion
+type: entity_reference
+settings:
+  target_type: device
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

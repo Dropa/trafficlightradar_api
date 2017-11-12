@@ -1,0 +1,23 @@
+uuid: dc9fbec6-ee56-495b-b32b-1ab20a424798
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.detector.field_lane
+    - trafficlight_api.detector_type.eka
+id: detector.eka.field_lane
+field_name: field_lane
+entity_type: detector
+bundle: eka
+label: Lane
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

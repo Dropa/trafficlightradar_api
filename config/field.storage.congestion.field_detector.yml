@@ -1,0 +1,19 @@
+uuid: 0ee5aab0-4d6e-4a20-9730-6556cf9125ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: congestion.field_detector
+field_name: field_detector
+entity_type: congestion
+type: entity_reference
+settings:
+  target_type: detector
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

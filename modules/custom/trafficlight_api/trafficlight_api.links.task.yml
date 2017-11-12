@@ -1,0 +1,102 @@
+# Detector routing definition
+
+entity.detector.canonical:
+  route_name: entity.detector.canonical
+  base_route: entity.detector.canonical
+  title: 'View'
+
+entity.detector.edit_form:
+  route_name: entity.detector.edit_form
+  base_route: entity.detector.canonical
+  title: 'Edit'
+
+entity.detector.delete_form:
+  route_name:  entity.detector.delete_form
+  base_route:  entity.detector.canonical
+  title: Delete
+  weight: 10
+
+# Device routing definition
+
+entity.device.canonical:
+  route_name: entity.device.canonical
+  base_route: entity.device.canonical
+  title: 'View'
+
+entity.device.edit_form:
+  route_name: entity.device.edit_form
+  base_route: entity.device.canonical
+  title: 'Edit'
+
+entity.device.delete_form:
+  route_name:  entity.device.delete_form
+  base_route:  entity.device.canonical
+  title: Delete
+  weight: 10
+
+# Traffic amount routing definition
+traffic_amount.settings_tab:
+  route_name: traffic_amount.settings
+  title: 'Settings'
+  base_route: traffic_amount.settings
+
+entity.traffic_amount.canonical:
+  route_name: entity.traffic_amount.canonical
+  base_route: entity.traffic_amount.canonical
+  title: 'View'
+
+entity.traffic_amount.edit_form:
+  route_name: entity.traffic_amount.edit_form
+  base_route: entity.traffic_amount.canonical
+  title: 'Edit'
+
+entity.traffic_amount.delete_form:
+  route_name:  entity.traffic_amount.delete_form
+  base_route:  entity.traffic_amount.canonical
+  title: Delete
+  weight: 10
+
+# Congestion routing definition
+congestion.settings_tab:
+  route_name: congestion.settings
+  title: 'Settings'
+  base_route: congestion.settings
+
+entity.congestion.canonical:
+  route_name: entity.congestion.canonical
+  base_route: entity.congestion.canonical
+  title: 'View'
+
+entity.congestion.edit_form:
+  route_name: entity.congestion.edit_form
+  base_route: entity.congestion.canonical
+  title: 'Edit'
+
+entity.congestion.delete_form:
+  route_name:  entity.congestion.delete_form
+  base_route:  entity.congestion.canonical
+  title: Delete
+  weight: 10
+
+# Queue length routing definition
+queue_length.settings_tab:
+  route_name: queue_length.settings
+  title: 'Settings'
+  base_route: queue_length.settings
+
+entity.queue_length.canonical:
+  route_name: entity.queue_length.canonical
+  base_route: entity.queue_length.canonical
+  title: 'View'
+
+entity.queue_length.edit_form:
+  route_name: entity.queue_length.edit_form
+  base_route: entity.queue_length.canonical
+  title: 'Edit'
+
+entity.queue_length.delete_form:
+  route_name:  entity.queue_length.delete_form
+  base_route:  entity.queue_length.canonical
+  title: Delete
+  weight: 10
+

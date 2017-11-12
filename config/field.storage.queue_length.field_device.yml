@@ -1,0 +1,19 @@
+uuid: bdca4266-b978-42f6-8c61-9d7e8e272c9e
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: queue_length.field_device
+field_name: field_device
+entity_type: queue_length
+type: entity_reference
+settings:
+  target_type: device
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

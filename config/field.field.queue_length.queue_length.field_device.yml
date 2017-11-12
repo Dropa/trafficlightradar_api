@@ -1,0 +1,29 @@
+uuid: b491ecc1-953c-4dc4-8c99-35b1e5a615d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.queue_length.field_device
+    - trafficlight_api.device_type.eka
+  module:
+    - trafficlight_api
+id: queue_length.queue_length.field_device
+field_name: field_device
+entity_type: queue_length
+bundle: queue_length
+label: Device
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:device'
+  handler_settings:
+    target_bundles:
+      eka: eka
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

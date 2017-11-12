@@ -1,0 +1,20 @@
+uuid: 3d585948-062d-4072-a9af-0b5966790c22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.traffic_amount.field_tsperiodend
+  module:
+    - trafficlight_api
+id: traffic_amount.traffic_amount.field_tsperiodend
+field_name: field_tsperiodend
+entity_type: traffic_amount
+bundle: traffic_amount
+label: tsPeriodEnd
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

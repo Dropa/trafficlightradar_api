@@ -1,0 +1,23 @@
+uuid: 8b45dfbd-098d-484a-9a5c-488bec4df95c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.detector.field_distance
+    - trafficlight_api.detector_type.eka
+id: detector.eka.field_distance
+field_name: field_distance
+entity_type: detector
+bundle: eka
+label: Distance
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

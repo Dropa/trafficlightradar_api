@@ -1,0 +1,116 @@
+uuid: 1e7f84f0-0e9a-411b-8000-468d51640e57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.queue_length.queue_length.field_avgwaittime
+    - field.field.queue_length.queue_length.field_detector
+    - field.field.queue_length.queue_length.field_device
+    - field.field.queue_length.queue_length.field_maxwaittime
+    - field.field.queue_length.queue_length.field_queuelength
+    - field.field.queue_length.queue_length.field_redperiod
+    - field.field.queue_length.queue_length.field_reliabvalue
+    - field.field.queue_length.queue_length.field_tsperiodend
+    - field.field.queue_length.queue_length.field_unitreliab
+    - field.field.queue_length.queue_length.field_vehiclecount
+  module:
+    - trafficlight_api
+id: queue_length.queue_length.default
+targetEntityType: queue_length
+bundle: queue_length
+mode: default
+content:
+  field_avgwaittime:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_detector:
+    weight: 14
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_device:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_maxwaittime:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_queuelength:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_redperiod:
+    weight: 11
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_reliabvalue:
+    weight: 10
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_tsperiodend:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_unitreliab:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_vehiclecount:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

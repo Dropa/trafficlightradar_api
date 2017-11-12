@@ -1,0 +1,21 @@
+uuid: f7c9e644-a151-4dea-8a5e-3ca3b118ee59
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: detector.field_longitude
+field_name: field_longitude
+entity_type: detector
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

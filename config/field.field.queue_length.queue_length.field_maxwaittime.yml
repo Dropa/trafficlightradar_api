@@ -1,0 +1,24 @@
+uuid: 8232c869-8dc0-4069-ba34-fa4786a49e05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.queue_length.field_maxwaittime
+  module:
+    - trafficlight_api
+id: queue_length.queue_length.field_maxwaittime
+field_name: field_maxwaittime
+entity_type: queue_length
+bundle: queue_length
+label: maxWaitTime
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

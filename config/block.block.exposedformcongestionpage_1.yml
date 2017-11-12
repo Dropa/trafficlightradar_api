@@ -1,0 +1,29 @@
+uuid: e6b18fb8-02fb-485e-8a62-d511948f0a4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.congestion
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: exposedformcongestionpage_1
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:congestion-page_1'
+settings:
+  id: 'views_exposed_filter_block:congestion-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '/congestion*'
+    negate: false
+    context_mapping: {  }

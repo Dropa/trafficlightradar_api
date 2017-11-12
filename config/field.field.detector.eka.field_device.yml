@@ -1,0 +1,28 @@
+uuid: 29b8195a-4b60-4281-94ad-a4dbd6b44795
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.detector.field_device
+    - trafficlight_api.detector_type.eka
+    - trafficlight_api.device_type.eka
+id: detector.eka.field_device
+field_name: field_device
+entity_type: detector
+bundle: eka
+label: Device
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:device'
+  handler_settings:
+    target_bundles:
+      eka: eka
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

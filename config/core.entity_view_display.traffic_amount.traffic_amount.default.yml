@@ -1,0 +1,88 @@
+uuid: c89774a0-d3ba-4b7d-ac7e-b4f2a198ba16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.traffic_amount.traffic_amount.field_countperiod
+    - field.field.traffic_amount.traffic_amount.field_detector
+    - field.field.traffic_amount.traffic_amount.field_device
+    - field.field.traffic_amount.traffic_amount.field_reliabvalue
+    - field.field.traffic_amount.traffic_amount.field_trafficamount
+    - field.field.traffic_amount.traffic_amount.field_tsperiodend
+  module:
+    - trafficlight_api
+    - user
+id: traffic_amount.traffic_amount.default
+targetEntityType: traffic_amount
+bundle: traffic_amount
+mode: default
+content:
+  field_countperiod:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_detector:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_device:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_reliabvalue:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_trafficamount:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_tsperiodend:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

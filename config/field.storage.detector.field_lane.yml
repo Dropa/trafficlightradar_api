@@ -1,0 +1,20 @@
+uuid: fe80da60-b1f9-4f4d-8156-dd526d88ffa1
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: detector.field_lane
+field_name: field_lane
+entity_type: detector
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: fe307088-deae-44bb-9076-411951cfea25
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: traffic_amount.field_device
+field_name: field_device
+entity_type: traffic_amount
+type: entity_reference
+settings:
+  target_type: device
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

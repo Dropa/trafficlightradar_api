@@ -1,0 +1,24 @@
+uuid: bcdfa5b4-0708-41da-800e-0b20566342c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.congestion.field_periodamount
+  module:
+    - trafficlight_api
+id: congestion.congestion.field_periodamount
+field_name: field_periodamount
+entity_type: congestion
+bundle: congestion
+label: periodAmount
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

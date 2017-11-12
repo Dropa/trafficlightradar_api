@@ -1,0 +1,20 @@
+uuid: 8644c9a4-02c9-4fc6-b62c-b1cf80cfc8f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: traffic_amount.field_trafficamount
+field_name: field_trafficamount
+entity_type: traffic_amount
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

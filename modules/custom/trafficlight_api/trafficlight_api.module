@@ -1,0 +1,249 @@
+<?php
+
+/**
+ * @file
+ * Contains trafficlight_api.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\trafficlight_api\Entity\Detector;
+use Drupal\trafficlight_api\Entity\Device;
+
+/**
+ * Implements hook_help().
+ */
+function trafficlight_api_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the trafficlight_api module.
+    case 'help.page.trafficlight_api':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function trafficlight_api_theme() {
+    $theme = [
+        'trafficlight_api' => [
+            'render element' => 'children',
+        ],
+    ];
+    $theme['detector'] = [
+        'render element' => 'elements',
+        'file' => 'detector.page.inc',
+        'template' => 'detector',
+    ];
+    $theme['detector_content_add_list'] = [
+        'render element' => 'content',
+        'variables' => ['content' => NULL],
+        'file' => 'detector.page.inc',
+    ];
+    $theme['device'] = [
+        'render element' => 'elements',
+        'file' => 'device.page.inc',
+        'template' => 'device',
+    ];
+    $theme['device_content_add_list'] = [
+        'render element' => 'content',
+        'variables' => ['content' => NULL],
+        'file' => 'device.page.inc',
+    ];
+    return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function trafficlight_api_theme_suggestions_detector(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#detector'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'detector__' . $sanitized_view_mode;
+  $suggestions[] = 'detector__' . $entity->bundle();
+  $suggestions[] = 'detector__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'detector__' . $entity->id();
+  $suggestions[] = 'detector__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function trafficlight_api_theme_suggestions_device(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#device'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'device__' . $sanitized_view_mode;
+  $suggestions[] = 'device__' . $entity->bundle();
+  $suggestions[] = 'device__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'device__' . $entity->id();
+  $suggestions[] = 'device__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+function trafficlight_api_cron() {
+    $base_uri = 'http://trafficlights.tampere.fi/api/v1/';
+    $apis = ['trafficAmount', 'congestion', 'queueLength'];
+    $workdir = '/tmp/api/';
+    foreach ($apis as $api) {
+
+        echo "Getting file {$api}..." . PHP_EOL;
+        exec("wget -P {$workdir} -O {$workdir}{$api} {$base_uri}{$api} >/dev/null 2>&1");
+        echo "Reading file {$api}..." . PHP_EOL;
+        $json = json_decode(file_get_contents("{$workdir}{$api}"), true);
+        echo "Removing file {$api}...". PHP_EOL;
+        exec("rm {$workdir}{$api}");
+        $results = $json['results'];
+        unset($json['results']);
+        foreach ($results as $result) {
+            // Find Devices.
+            $device = trafficlight_api_device($result['device']);
+            unset($result['device']);
+
+            // Find Detectors.
+            $detector = trafficlight_api_detector($device, $result['detector']);
+            unset($result['detector']);
+
+            $storage = trafficlight_api_getStorage($api);
+            trafficlight_api_createEntity($storage, $result, $device, $detector);
+
+        }
+
+        /*
+        echo "Other dump fuck things in {$api}" . PHP_EOL;
+        dump($json);
+        */
+    }
+
+    foreach (['traffic_amount', 'queue_length', 'congestion'] as $entity_type) {
+        trafficlight_api_delete_outdated($entity_type);
+    }
+}
+
+
+function trafficlight_api_device($name) {
+    $name = strtolower($name);
+    $name = str_replace(' ', '', $name);
+    $query = \Drupal::entityQuery('device')
+        ->condition('name', $name)
+        ->execute();
+    if (!$query) {
+        $device = Device::create([
+            'type' => 'eka',
+            'name' => $name,
+        ]);
+        $device->save();
+    }
+    else {
+        $device = Device::load(key($query));
+    }
+    /** @var Device $device */
+    return $device;
+}
+
+function trafficlight_api_detector(Device $device, $name) {
+    $name = strtolower($name);
+    $name = str_replace(' ', '', $name);
+    $query = \Drupal::entityQuery('detector')
+        ->condition('field_device', $device->id())
+        ->condition('name', $name)
+        ->execute();
+    if (!$query) {
+        $direction = $name[0];
+        $rest = substr($name, 1);
+        if (strpos($rest, '_') !== FALSE) {
+            $distance = stristr($rest, '_', TRUE);
+            $lane = substr(stristr($rest, '_'), 1);
+        }
+        else {
+            $distance = $rest;
+            $lane = NULL;
+        }
+        $detector = Detector::create([
+            'type' => 'eka',
+            'name' => $name,
+            'field_device' => $device,
+            'field_direction' => $direction,
+            'field_distance' => $distance,
+            'field_lane' => $lane,
+        ]);
+        $detector->save();
+    }
+    else {
+        $detector = Detector::load(key($query));
+    }
+    /** @var Detector $detector */
+    return $detector;
+}
+
+function trafficlight_api_getStorage($key) {
+    switch ($key) {
+        case 'trafficAmount':
+            $store = 'traffic_amount';
+            break;
+
+        case 'congestion':
+            $store = 'congestion';
+            break;
+
+        case 'queueLength':
+            $store = 'queue_length';
+            break;
+
+        default:
+            $store = $key;
+    }
+    $storage = \Drupal::entityTypeManager()->getStorage($store);
+    return $storage;
+}
+
+function trafficlight_api_createEntity(\Drupal\Core\Entity\EntityStorageInterface $storage, $config, Device $device, Detector $detector) {
+    $entity = $storage->loadByProperties([
+        'field_tsperiodend' => $config['tsPeriodEnd'],
+        'field_device' => $device->id(),
+        'field_detector' => $detector->id(),
+    ]);
+    if (!empty($entity)) {
+        return current($entity);
+    }
+    $entity = $storage->create();
+    /** @var \Drupal\Core\Entity\ContentEntityBase $entity */
+    foreach ($config as $f => $value) {
+        $field = 'field_' . strtolower($f);
+        if (!$entity->hasField($field)) {
+            $class = get_class($entity);
+            $type = gettype($value);
+            \Drupal::logger('traffic')->critical("Missing field {$f} (type {$type}) (value {$value}) {$class}");
+        }
+        else {
+            $entity->set($field, $value);
+        }
+    }
+    $entity->set('field_device', $device->id());
+    $entity->set('field_detector', $detector->id());
+    $entity->save();
+    return $entity;
+}
+
+function trafficlight_api_delete_outdated($entity_type) {
+    $day = 60*60*24;
+    $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
+    $query = $storage->getQuery()
+        ->condition('created', time() - $day, '<')
+        ->execute();
+    foreach (array_chunk($query, 100) as $chunk) {
+        /** @var \Drupal\Core\Entity\ContentEntityInterface[] $entities */
+        $entities = $storage->loadMultiple($chunk);
+        foreach ($entities as $entity) {
+            $entity->delete();
+        }
+    }
+}

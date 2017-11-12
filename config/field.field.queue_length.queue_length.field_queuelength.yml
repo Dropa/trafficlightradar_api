@@ -1,0 +1,24 @@
+uuid: ee4cddc0-c07a-4f64-8c83-f3af82919ea4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.queue_length.field_queuelength
+  module:
+    - trafficlight_api
+id: queue_length.queue_length.field_queuelength
+field_name: field_queuelength
+entity_type: queue_length
+bundle: queue_length
+label: queueLength
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

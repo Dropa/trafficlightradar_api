@@ -1,0 +1,18 @@
+uuid: b04b743c-376c-4a32-9506-da697e90e2c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: queue_length.field_avgwaittime
+field_name: field_avgwaittime
+entity_type: queue_length
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: a77b363f-d158-4b0d-a130-5c10d83ba5fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.trafficamount
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: exposedformtrafficamountpage_1
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:trafficamount-page_1'
+settings:
+  id: 'views_exposed_filter_block:trafficamount-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '/traffic-amount*'
+    negate: false
+    context_mapping: {  }

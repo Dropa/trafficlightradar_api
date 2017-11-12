@@ -1,0 +1,20 @@
+uuid: 395c1eed-aded-4166-8bb2-c88b4ba57183
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: traffic_amount.field_countperiod
+field_name: field_countperiod
+entity_type: traffic_amount
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

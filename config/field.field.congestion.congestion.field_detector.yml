@@ -1,0 +1,29 @@
+uuid: 2ec288b5-de64-459e-9093-1feb5390114e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.congestion.field_detector
+    - trafficlight_api.detector_type.eka
+  module:
+    - trafficlight_api
+id: congestion.congestion.field_detector
+field_name: field_detector
+entity_type: congestion
+bundle: congestion
+label: Detector
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:detector'
+  handler_settings:
+    target_bundles:
+      eka: eka
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

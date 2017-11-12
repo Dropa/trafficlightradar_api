@@ -1,0 +1,91 @@
+uuid: d5c6e410-15cc-4680-88f6-214c78f3be77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.congestion.congestion.field_congestioncount
+    - field.field.congestion.congestion.field_countperiod
+    - field.field.congestion.congestion.field_detector
+    - field.field.congestion.congestion.field_device
+    - field.field.congestion.congestion.field_periodamount
+    - field.field.congestion.congestion.field_reliabvalue
+    - field.field.congestion.congestion.field_tsperiodend
+  module:
+    - trafficlight_api
+id: congestion.congestion.default
+targetEntityType: congestion
+bundle: congestion
+mode: default
+content:
+  field_congestioncount:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_countperiod:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_detector:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_device:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_periodamount:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_reliabvalue:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_tsperiodend:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

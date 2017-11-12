@@ -1,0 +1,19 @@
+uuid: d6243a7f-4599-44b5-9dd7-2a81f2f719bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.detector.field_detector_type_code
+    - trafficlight_api.detector_type.eka
+id: detector.eka.field_detector_type_code
+field_name: field_detector_type_code
+entity_type: detector
+bundle: eka
+label: 'Detector type code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

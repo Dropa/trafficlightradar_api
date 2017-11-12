@@ -1,0 +1,20 @@
+uuid: ac98749a-4021-430e-8b60-ef4b8e50eedd
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: detector.field_distance
+field_name: field_distance
+entity_type: detector
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

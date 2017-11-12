@@ -1,0 +1,22 @@
+{#
+/**
+ * @file device.html.twig
+ * Default theme implementation to present Device data.
+ *
+ * This template is used when viewing Device pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_device()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('device') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

@@ -1,0 +1,20 @@
+uuid: 60f3eccf-c05f-4461-a473-d0c1ec68c84d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.queue_length.field_tsperiodend
+  module:
+    - trafficlight_api
+id: queue_length.queue_length.field_tsperiodend
+field_name: field_tsperiodend
+entity_type: queue_length
+bundle: queue_length
+label: tsPeriodEnd
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

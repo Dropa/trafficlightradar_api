@@ -1,0 +1,83 @@
+uuid: 7f036143-0aa6-421c-afb0-f46749eade30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.traffic_amount.traffic_amount.field_countperiod
+    - field.field.traffic_amount.traffic_amount.field_detector
+    - field.field.traffic_amount.traffic_amount.field_device
+    - field.field.traffic_amount.traffic_amount.field_reliabvalue
+    - field.field.traffic_amount.traffic_amount.field_trafficamount
+    - field.field.traffic_amount.traffic_amount.field_tsperiodend
+  module:
+    - trafficlight_api
+id: traffic_amount.traffic_amount.default
+targetEntityType: traffic_amount
+bundle: traffic_amount
+mode: default
+content:
+  field_countperiod:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_detector:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_device:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_reliabvalue:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_trafficamount:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_tsperiodend:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }

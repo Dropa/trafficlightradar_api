@@ -1,0 +1,19 @@
+uuid: aacd0a5a-02ed-460b-8cb6-c976a2292593
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: traffic_amount.field_detector
+field_name: field_detector
+entity_type: traffic_amount
+type: entity_reference
+settings:
+  target_type: detector
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 3471618c-ddec-40b1-8a63-fc29bf3be8fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: queue_length.field_detector
+field_name: field_detector
+entity_type: queue_length
+type: entity_reference
+settings:
+  target_type: detector
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

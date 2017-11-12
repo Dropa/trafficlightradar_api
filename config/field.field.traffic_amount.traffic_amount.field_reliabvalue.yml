@@ -1,0 +1,24 @@
+uuid: 130b8ed9-31e3-4d44-96f5-4c51a00abc9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.traffic_amount.field_reliabvalue
+  module:
+    - trafficlight_api
+id: traffic_amount.traffic_amount.field_reliabvalue
+field_name: field_reliabvalue
+entity_type: traffic_amount
+bundle: traffic_amount
+label: reliabValue
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

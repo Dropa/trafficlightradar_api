@@ -1,0 +1,20 @@
+uuid: be895a79-f0ce-45da-adf6-13e11b677107
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: congestion.field_periodamount
+field_name: field_periodamount
+entity_type: congestion
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

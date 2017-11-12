@@ -1,0 +1,29 @@
+uuid: 1a37471b-0da3-4467-8f4a-cac5af68bdee
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.queue_length
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: exposedformqueue_lengthpage_1
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:queue_length-page_1'
+settings:
+  id: 'views_exposed_filter_block:queue_length-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '/queue-length*'
+    negate: false
+    context_mapping: {  }

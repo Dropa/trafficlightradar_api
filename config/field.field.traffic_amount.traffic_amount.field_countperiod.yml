@@ -1,0 +1,24 @@
+uuid: ad7829ff-fba0-4424-9dcd-00b8f6bd70f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.traffic_amount.field_countperiod
+  module:
+    - trafficlight_api
+id: traffic_amount.traffic_amount.field_countperiod
+field_name: field_countperiod
+entity_type: traffic_amount
+bundle: traffic_amount
+label: countPeriod
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

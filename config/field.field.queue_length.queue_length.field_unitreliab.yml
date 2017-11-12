@@ -1,0 +1,20 @@
+uuid: b0edb8e4-68f6-412c-b9e5-cad3c3f8b18b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.queue_length.field_unitreliab
+  module:
+    - trafficlight_api
+id: queue_length.queue_length.field_unitreliab
+field_name: field_unitreliab
+entity_type: queue_length
+bundle: queue_length
+label: unitReliab
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

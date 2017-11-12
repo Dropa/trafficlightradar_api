@@ -1,0 +1,113 @@
+uuid: 525076bc-b8b3-428c-b4a2-6a3cfe48e4eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.detector.eka.field_detector_id
+    - field.field.detector.eka.field_detector_type
+    - field.field.detector.eka.field_detector_type_code
+    - field.field.detector.eka.field_device
+    - field.field.detector.eka.field_direction
+    - field.field.detector.eka.field_distance
+    - field.field.detector.eka.field_lane
+    - field.field.detector.eka.field_latitude
+    - field.field.detector.eka.field_longitude
+    - trafficlight_api.detector_type.eka
+  module:
+    - user
+id: detector.eka.default
+targetEntityType: detector
+bundle: eka
+mode: default
+content:
+  field_detector_id:
+    weight: 10
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_detector_type:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_detector_type_code:
+    weight: 9
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_device:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_direction:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_distance:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_lane:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_latitude:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_longitude:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

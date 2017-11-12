@@ -1,0 +1,26 @@
+uuid: 442ef9c5-3034-4bc5-a5f6-4afae6878792
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'use text format restricted_html'
+  - 'view published congestion entities'
+  - 'view published detector entities'
+  - 'view published device entities'
+  - 'view published queue length entities'
+  - 'view published traffic amount entities'
+  - 'view unpublished congestion entities'
+  - 'view unpublished detector entities'
+  - 'view unpublished device entities'
+  - 'view unpublished queue length entities'
+  - 'view unpublished traffic amount entities'

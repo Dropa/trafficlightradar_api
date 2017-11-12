@@ -1,0 +1,37 @@
+entity.detector.add_form:
+  route_name: entity.detector.add_page
+  title: 'Add Detector'
+  appears_on:
+    - entity.detector.collection
+entity.detector_type.add_form:
+  route_name: entity.detector_type.add_form
+  title: 'Add Detector type'
+  appears_on:
+    - entity.detector_type.collection
+
+entity.device.add_form:
+  route_name: entity.device.add_page
+  title: 'Add Device'
+  appears_on:
+    - entity.device.collection
+entity.device_type.add_form:
+  route_name: entity.device_type.add_form
+  title: 'Add Device type'
+  appears_on:
+    - entity.device_type.collection
+
+entity.traffic_amount.add_form:
+  route_name: entity.traffic_amount.add_form
+  title: 'Add Traffic amount'
+  appears_on:
+    - entity.traffic_amount.collection
+entity.congestion.add_form:
+  route_name: entity.congestion.add_form
+  title: 'Add Congestion'
+  appears_on:
+    - entity.congestion.collection
+entity.queue_length.add_form:
+  route_name: entity.queue_length.add_form
+  title: 'Add Queue length'
+  appears_on:
+    - entity.queue_length.collection

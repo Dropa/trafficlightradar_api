@@ -1,0 +1,78 @@
+
+# Detector menu items definition
+entity.detector.collection:
+  title: 'Detector list'
+  route_name: entity.detector.collection
+  description: 'List Detector entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Detector type menu items definition
+entity.detector_type.collection:
+  title: 'Detector type'
+  route_name: entity.detector_type.collection
+  description: 'List Detector type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+
+
+# Device menu items definition
+entity.device.collection:
+  title: 'Device list'
+  route_name: entity.device.collection
+  description: 'List Device entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Device type menu items definition
+entity.device_type.collection:
+  title: 'Device type'
+  route_name: entity.device_type.collection
+  description: 'List Device type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+
+
+# Traffic amount menu items definition
+entity.traffic_amount.collection:
+  title: 'Traffic amount list'
+  route_name: entity.traffic_amount.collection
+  description: 'List Traffic amount entities'
+  parent: system.admin_structure
+  weight: 100
+
+traffic_amount.admin.structure.settings:
+  title: Traffic amount settings
+  description: 'Configure Traffic amount entities'
+  route_name: traffic_amount.settings
+  parent: system.admin_structure
+
+# Congestion menu items definition
+entity.congestion.collection:
+  title: 'Congestion list'
+  route_name: entity.congestion.collection
+  description: 'List Congestion entities'
+  parent: system.admin_structure
+  weight: 100
+
+congestion.admin.structure.settings:
+  title: Congestion settings
+  description: 'Configure Congestion entities'
+  route_name: congestion.settings
+  parent: system.admin_structure
+
+# Queue length menu items definition
+entity.queue_length.collection:
+  title: 'Queue length list'
+  route_name: entity.queue_length.collection
+  description: 'List Queue length entities'
+  parent: system.admin_structure
+  weight: 100
+
+queue_length.admin.structure.settings:
+  title: Queue length settings
+  description: 'Configure Queue length entities'
+  route_name: queue_length.settings
+  parent: system.admin_structure

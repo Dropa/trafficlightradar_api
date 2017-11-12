@@ -1,0 +1,24 @@
+uuid: 741e3911-e065-4486-ad88-d1d74acb2348
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.queue_length.field_reliabvalue
+  module:
+    - trafficlight_api
+id: queue_length.queue_length.field_reliabvalue
+field_name: field_reliabvalue
+entity_type: queue_length
+bundle: queue_length
+label: reliabValue
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

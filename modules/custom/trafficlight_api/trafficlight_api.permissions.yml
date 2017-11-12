@@ -1,0 +1,110 @@
+add detector entities:
+  title: 'Create new Detector entities'
+
+administer detector entities:
+  title: 'Administer Detector entities'
+  description: 'Allow to access the administration form to configure Detector entities.'
+  restrict access: true
+
+delete detector entities:
+  title: 'Delete Detector entities'
+
+edit detector entities:
+  title: 'Edit Detector entities'
+
+access detector overview:
+  title: 'Access the Detector overview page'
+
+view published detector entities:
+  title: 'View published Detector entities'
+
+view unpublished detector entities:
+  title: 'View unpublished Detector entities'
+add device entities:
+  title: 'Create new Device entities'
+
+administer device entities:
+  title: 'Administer Device entities'
+  description: 'Allow to access the administration form to configure Device entities.'
+  restrict access: true
+
+delete device entities:
+  title: 'Delete Device entities'
+
+edit device entities:
+  title: 'Edit Device entities'
+
+access device overview:
+  title: 'Access the Device overview page'
+
+view published device entities:
+  title: 'View published Device entities'
+
+view unpublished device entities:
+  title: 'View unpublished Device entities'
+add traffic amount entities:
+  title: 'Create new Traffic amount entities'
+
+administer traffic amount entities:
+  title: 'Administer Traffic amount entities'
+  description: 'Allow to access the administration form to configure Traffic amount entities.'
+  restrict access: true
+
+delete traffic amount entities:
+  title: 'Delete Traffic amount entities'
+
+edit traffic amount entities:
+  title: 'Edit Traffic amount entities'
+
+access traffic amount overview:
+  title: 'Access the Traffic amount overview page'
+
+view published traffic amount entities:
+  title: 'View published Traffic amount entities'
+
+view unpublished traffic amount entities:
+  title: 'View unpublished Traffic amount entities'
+add congestion entities:
+  title: 'Create new Congestion entities'
+
+administer congestion entities:
+  title: 'Administer Congestion entities'
+  description: 'Allow to access the administration form to configure Congestion entities.'
+  restrict access: true
+
+delete congestion entities:
+  title: 'Delete Congestion entities'
+
+edit congestion entities:
+  title: 'Edit Congestion entities'
+
+access congestion overview:
+  title: 'Access the Congestion overview page'
+
+view published congestion entities:
+  title: 'View published Congestion entities'
+
+view unpublished congestion entities:
+  title: 'View unpublished Congestion entities'
+add queue length entities:
+  title: 'Create new Queue length entities'
+
+administer queue length entities:
+  title: 'Administer Queue length entities'
+  description: 'Allow to access the administration form to configure Queue length entities.'
+  restrict access: true
+
+delete queue length entities:
+  title: 'Delete Queue length entities'
+
+edit queue length entities:
+  title: 'Edit Queue length entities'
+
+access queue length overview:
+  title: 'Access the Queue length overview page'
+
+view published queue length entities:
+  title: 'View published Queue length entities'
+
+view unpublished queue length entities:
+  title: 'View unpublished Queue length entities'

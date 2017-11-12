@@ -1,0 +1,29 @@
+uuid: 9b386a8b-5a27-47aa-84bd-245ad1c355d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.devices_and_detectors
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: exposedformdevices_and_detectorspage_1
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:devices_and_detectors-page_1'
+settings:
+  id: 'views_exposed_filter_block:devices_and_detectors-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '/devices-and-detectors*'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,20 @@
+uuid: 8e9fa177-9b56-4404-9aa5-c59e73531e6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - trafficlight_api
+id: congestion.field_congestioncount
+field_name: field_congestioncount
+entity_type: congestion
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

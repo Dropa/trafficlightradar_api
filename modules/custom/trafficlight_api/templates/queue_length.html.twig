@@ -1,0 +1,22 @@
+{#
+/**
+ * @file queue_length.html.twig
+ * Default theme implementation to present Queue length data.
+ *
+ * This template is used when viewing Queue length pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_queue_length()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('queue_length') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>

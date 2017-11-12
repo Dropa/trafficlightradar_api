@@ -1,0 +1,108 @@
+uuid: fbfb584b-f28b-4199-92f8-343b97f8bfbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.detector.eka.field_detector_id
+    - field.field.detector.eka.field_detector_type
+    - field.field.detector.eka.field_detector_type_code
+    - field.field.detector.eka.field_device
+    - field.field.detector.eka.field_direction
+    - field.field.detector.eka.field_distance
+    - field.field.detector.eka.field_lane
+    - field.field.detector.eka.field_latitude
+    - field.field.detector.eka.field_longitude
+    - trafficlight_api.detector_type.eka
+id: detector.eka.default
+targetEntityType: detector
+bundle: eka
+mode: default
+content:
+  field_detector_id:
+    weight: 15
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_detector_type:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_detector_type_code:
+    weight: 14
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_device:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_direction:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_distance:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_lane:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_latitude:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_longitude:
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+hidden: {  }
