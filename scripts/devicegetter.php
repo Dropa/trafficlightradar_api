@@ -1,23 +1,27 @@
 <?php
 
 
-$base_uri = '"http://opendata.navici.com/tampere/opendata/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=opendata:';
-$tail_uri = '&outputFormat=json&srsName=EPSG:4326"';
+$base_uri = 'http://opendata.navici.com/tampere/opendata/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=opendata:';
+$tail_uri = '&outputFormat=json&srsName=EPSG:4326';
 $apis = [
     'WFS_LIIKENNEVALO_ILMAISIN',
     //'WFS_LIIKENNEVALO_LAITE',
     //'WFS_LIIKENNEVALO_LIITTYMA'
 ];
-$workdir = '/tmp/api/';
 
 $fetch = [];
+$client = new \GuzzleHttp\Client();
+
 foreach ($apis as $api) {
-    echo "Getting file {$api}..." . PHP_EOL;
-    exec("wget -P {$workdir} -O {$workdir}{$api} {$base_uri}{$api}{$tail_uri} >/dev/null 2>&1");
-    echo "Reading file {$api}..." . PHP_EOL;
-    $json = json_decode(file_get_contents("{$workdir}{$api}"), true);
-    echo "Removing file {$api}..." . PHP_EOL;
-    exec("rm {$workdir}{$api}");
+    $response = $client->get("{$base_uri}{$api}{$tail_uri}",[
+        'headers' => [
+            'Accept' => 'application/json',
+        ]
+    ]);
+    if ($response->getStatusCode() != 200) {
+        continue;
+    }
+    $json = json_decode($response->getBody()->getContents(), true);
     foreach ($json['features'] as $feature) {
         $f = $feature['properties'];
         $device = 'tre';

@@ -97,7 +97,7 @@ function trafficlight_api_cron() {
     foreach ($apis as $api) {
         $response = $client->get($base_uri . $api,[
             'headers' => [
-                'Accept'     => 'application/json',
+                'Accept' => 'application/json',
             ]
         ]);
         if ($response->getStatusCode() != 200) {
@@ -119,7 +119,6 @@ function trafficlight_api_cron() {
             trafficlight_api_createEntity($storage, $result, $device, $detector);
 
         }
-        trafficlight_api_delete_outdated(trafficlight_api_getStorageKey($api));
     }
 
 }
@@ -229,17 +228,4 @@ function trafficlight_api_createEntity(\Drupal\Core\Entity\EntityStorageInterfac
     $entity->set('field_detector', $detector->id());
     $entity->save();
     return $entity;
-}
-
-function trafficlight_api_delete_outdated($entity_type) {
-    $day = 60*60*24;
-    $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
-    $query = $storage->getQuery()
-        ->condition('created', time() - $day, '<')
-        ->execute();
-    foreach (array_chunk($query, 100) as $chunk) {
-        /** @var \Drupal\Core\Entity\ContentEntityInterface[] $entities */
-        $entities = $storage->loadMultiple($chunk);
-        $storage->delete($entities);
-    }
 }
