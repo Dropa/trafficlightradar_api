@@ -8,6 +8,7 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\trafficlight_api\Entity\Detector;
 use Drupal\trafficlight_api\Entity\Device;
+use GuzzleHttp\Client;
 
 /**
  * Implements hook_help().
@@ -92,15 +93,17 @@ function trafficlight_api_theme_suggestions_device(array $variables) {
 function trafficlight_api_cron() {
     $base_uri = 'http://trafficlights.tampere.fi/api/v1/';
     $apis = ['trafficAmount', 'congestion', 'queueLength'];
-    $workdir = '/tmp/api/';
+    $client = new Client();
     foreach ($apis as $api) {
-
-        echo "Getting file {$api}..." . PHP_EOL;
-        exec("wget -P {$workdir} -O {$workdir}{$api} {$base_uri}{$api} >/dev/null 2>&1");
-        echo "Reading file {$api}..." . PHP_EOL;
-        $json = json_decode(file_get_contents("{$workdir}{$api}"), true);
-        echo "Removing file {$api}...". PHP_EOL;
-        exec("rm {$workdir}{$api}");
+        $response = $client->get($base_uri . $api,[
+            'headers' => [
+                'Accept'     => 'application/json',
+            ]
+        ]);
+        if ($response->getStatusCode() != 200) {
+            continue;
+        }
+        $json = json_decode($response->getBody()->getContents(), true);
         $results = $json['results'];
         unset($json['results']);
         foreach ($results as $result) {
@@ -116,18 +119,10 @@ function trafficlight_api_cron() {
             trafficlight_api_createEntity($storage, $result, $device, $detector);
 
         }
-
-        /*
-        echo "Other dump fuck things in {$api}" . PHP_EOL;
-        dump($json);
-        */
+        trafficlight_api_delete_outdated(trafficlight_api_getStorageKey($api));
     }
 
-    foreach (['traffic_amount', 'queue_length', 'congestion'] as $entity_type) {
-        trafficlight_api_delete_outdated($entity_type);
-    }
 }
-
 
 function trafficlight_api_device($name) {
     $name = strtolower($name);
@@ -183,8 +178,7 @@ function trafficlight_api_detector(Device $device, $name) {
     /** @var Detector $detector */
     return $detector;
 }
-
-function trafficlight_api_getStorage($key) {
+function trafficlight_api_getStorageKey($key) {
     switch ($key) {
         case 'trafficAmount':
             $store = 'traffic_amount';
@@ -201,6 +195,10 @@ function trafficlight_api_getStorage($key) {
         default:
             $store = $key;
     }
+    return $store;
+}
+function trafficlight_api_getStorage($key) {
+    $store = trafficlight_api_getStorageKey($key);
     $storage = \Drupal::entityTypeManager()->getStorage($store);
     return $storage;
 }
@@ -242,8 +240,6 @@ function trafficlight_api_delete_outdated($entity_type) {
     foreach (array_chunk($query, 100) as $chunk) {
         /** @var \Drupal\Core\Entity\ContentEntityInterface[] $entities */
         $entities = $storage->loadMultiple($chunk);
-        foreach ($entities as $entity) {
-            $entity->delete();
-        }
+        $storage->delete($entities);
     }
 }
