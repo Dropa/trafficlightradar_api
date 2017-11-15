@@ -102,6 +102,7 @@ display:
             field_detector_type_code: field_detector_type_code
             field_longitude: field_longitude
             field_latitude: field_latitude
+            nothing: nothing
           info:
             name:
               sortable: false
@@ -109,7 +110,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             name_1:
               sortable: false
               default_sort_order: asc
@@ -123,43 +124,50 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             field_distance:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             field_lane:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             field_detector_type:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-medium
             field_detector_type_code:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-medium
             field_longitude:
               sortable: false
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-medium
             field_latitude:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: priority-medium
+            nothing:
               sortable: false
               default_sort_order: asc
               align: ''

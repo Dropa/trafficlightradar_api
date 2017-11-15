@@ -99,7 +99,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-medium
             field_detector:
               sortable: true
               default_sort_order: asc
@@ -113,14 +113,14 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             field_reliabvalue:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             field_trafficamount:
               sortable: true
               default_sort_order: asc
@@ -134,7 +134,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
           default: '-1'
           empty_table: false
       row:

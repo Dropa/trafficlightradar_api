@@ -101,7 +101,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-medium
             field_detector:
               sortable: true
               default_sort_order: asc
@@ -114,28 +114,28 @@ display:
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: true
               responsive: ''
             field_countperiod:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
-              responsive: ''
+              empty_column: true
+              responsive: priority-low
             field_periodamount:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
-              responsive: ''
+              empty_column: true
+              responsive: priority-low
             field_reliabvalue:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
-              empty_column: false
+              empty_column: true
               responsive: ''
             field_tsperiodend:
               sortable: true
@@ -143,7 +143,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
           default: '-1'
           empty_table: false
       row:

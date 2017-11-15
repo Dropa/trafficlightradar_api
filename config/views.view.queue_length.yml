@@ -107,7 +107,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-medium
             field_detector:
               sortable: true
               default_sort_order: asc
@@ -128,7 +128,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             field_queuelength:
               sortable: true
               default_sort_order: asc
@@ -142,21 +142,21 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-medium
             field_reliabvalue:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             field_unitreliab:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
             field_vehiclecount:
               sortable: true
               default_sort_order: asc
@@ -170,7 +170,7 @@ display:
               align: ''
               separator: ''
               empty_column: false
-              responsive: ''
+              responsive: priority-low
           default: '-1'
           empty_table: false
       row:
